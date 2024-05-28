@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  env-viewer:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      - EXAMPLE_ENV_VAR=HelloWorld
+      - ANOTHER_ENV_VAR=AnotherValue

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environment Variables</title>
+</head>
+<body>
+    <h1>Environment Variables</h1>
+    <pre id="env-vars"></pre>
+
+    <script>
+        const envVars = {};
+        for (let key in process.env) {
+            if (process.env.hasOwnProperty(key)) {
+                envVars[key] = process.env[key];
+            }
+        }
+        document.getElementById('env-vars').textContent = JSON.stringify(envVars, null, 2);
+    </script>
+</body>
+</html>
