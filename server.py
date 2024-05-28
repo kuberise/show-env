@@ -1,6 +1,7 @@
 # server.py
 import os
 from http.server import BaseHTTPRequestHandler, HTTPServer
+import json
 
 class RequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -18,7 +19,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         </head>
         <body>
             <h1>Environment Variables</h1>
-            <pre>{env_vars}</pre>
+            <pre>{json.dumps(env_vars, indent=4)}</pre>
         </body>
         </html>
         """
