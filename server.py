@@ -2,15 +2,12 @@
 import os
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-# List of specific environment variables to display
-ENV_VARS_TO_DISPLAY = ["EXAMPLE_ENV_VAR", "ANOTHER_ENV_VAR"]
-
 class RequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.send_header('Content-type', 'text/html')
         self.end_headers()
-        env_vars = {key: os.getenv(key) for key in ENV_VARS_TO_DISPLAY if os.getenv(key) is not None}
+        env_vars = {key: value for key, value in os.environ.items()}
         html = f"""
         <!DOCTYPE html>
         <html lang="en">
