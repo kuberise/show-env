@@ -30,7 +30,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/env-viewer:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/env-viewer:${{ github.sha }}
           cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/env-viewer:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/env-viewer:buildcache,mode=max
 
@@ -39,7 +39,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/env-viewer:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/env-viewer:${{ github.sha }}
           platforms: linux/amd64,linux/arm64/v8
           cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/env-viewer:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/env-viewer:buildcache,mode=max
