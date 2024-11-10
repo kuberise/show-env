@@ -40,6 +40,6 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64/v8
           tags: |
-            ghcr.io/${{ github.repository }}/show-env:latest
-            ghcr.io/${{ github.repository }}/show-env:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}:latest
+            ghcr.io/${{ github.repository }}:${{ github.ref_name }}
           push: true
