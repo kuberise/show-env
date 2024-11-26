@@ -18,7 +18,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             <title>Environment Variables</title>
         </head>
         <body>
-            <h1>Environment Variables v1.8</h1>
+            <h1>Environment Variables v1.9-feature</h1>
             <pre>{json.dumps(env_vars, indent=4)}</pre>
         </body>
         </html>
